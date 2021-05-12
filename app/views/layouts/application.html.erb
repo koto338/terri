@@ -13,16 +13,14 @@
   <body>
     <div class="footerFixed">
       <div class="container">
-        <p class="notice"><%= notice %></p>
-        <p class="alert"><%= alert %></p>
-        <%= render 'layouts/error_messages' %>
-        <%= yield %>
+      <%= render 'layouts/error_messages' %>
+      <%= yield %>
       </div>
       <%= render 'layouts/footer' %>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
       <script>
         window.setTimeout(function() {
-          $(".alert").slideUp();
+        $(".alert").slideUp();
         }, 3000);
       </script>
     </div>
