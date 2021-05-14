@@ -6,11 +6,23 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+     <script src="https://kit.fontawesome.com/dc66eed749.js" crossorigin="anonymous"></script>
+    <%= render 'layouts/shim' %> 
   </head>
 
   <body>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-    <%= yield %>
+    <div class="footerFixed">
+      <div class="container">
+      <%= render 'layouts/error_messages' %>
+      <%= yield %>
+      </div>
+      <%= render 'layouts/footer' %>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script>
+        window.setTimeout(function() {
+        $(".alert").slideUp();
+        }, 3000);
+      </script>
+    </div>
   </body>
 </html>
