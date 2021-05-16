@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20210510122234) do
+ActiveRecord::Schema.define(version: 20210516033626) do
+
+  create_table "areas", force: :cascade do |t|
+    t.string "ward", null: false
+    t.string "town", null: false
+    t.string "city_block", null: false
+    t.integer "status", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -22,8 +31,23 @@ ActiveRecord::Schema.define(version: 20210510122234) do
     t.datetime "updated_at", null: false
     t.string "username", default: "", null: false
     t.string "image"
+    t.boolean "delete_flag", default: false, null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  create_table "visit_histories", force: :cascade do |t|
+    t.string "customer"
+    t.text "appointment"
+    t.text "visit"
+    t.text "contract"
+    t.text "note"
+    t.integer "user_id"
+    t.integer "area_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["area_id"], name: "index_visit_histories_on_area_id"
+    t.index ["user_id"], name: "index_visit_histories_on_user_id"
   end
 
 end
