@@ -12,7 +12,7 @@ class AreasController < ApplicationController
       redirect_to root_path 
     else
       flash.now[:danger] = "登録に失敗しました"
-      render area_new_path
+      render new_area_path
     end
   end
 

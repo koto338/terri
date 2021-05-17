@@ -1,12 +1,8 @@
 Rails.application.routes.draw do
   
   # テリ登録
-  get  'areas/new',     to: 'areas#new',     as: 'area_new'
-  post 'areas/create',  to: 'areas#create',  as: 'area_create'
-  #  status: 0
-  get  'areas/(:id)/update', to: 'areas#update', as: 'area_update'
-   
-
+  resources :areas, only: [:new, :create, :update]
+  
   # devise_for :users
   devise_for :users, controllers: {
     sessions:      'users/sessions',

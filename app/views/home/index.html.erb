@@ -6,7 +6,7 @@
   <h1><%= current_user.username %>のテリトリ―</h1>
 </div>
 
-<% if @visits.blank? %>
+<% if @areas.blank? %>
 <div class="message">
   <h3>テリを登録してみよう！</h3>
   <div class="icon">
@@ -18,7 +18,7 @@
 <h4 class="month">6ヶ月テリ</h4>
 <div class="main">
   <ul>
-    <% @visits.each do |area| %>
+    <% @areas.each do |area| %>
       <% if area.status == 1 %>
       <li class="city">
         <%= area.ward %>
@@ -29,7 +29,7 @@
           <%= time_ago_in_words(area.created_at) %>
         </time>
         
-        <%= link_to area_update_path metod: :post do %>
+        <%= link_to area_path(area) do %>
           <i class="fas fa-car-side"></i>移動</i>
         <% end %>
 
@@ -44,7 +44,7 @@
 <h4 class="month">訳テリ</h4>
 <div class="main">
   <ul>
-    <% @visits.each do |area| %>
+    <% @areas.each do |area| %>
       <% if area.status == 2 %>
       <li class="city">
         <%= area.ward %>
@@ -55,7 +55,7 @@
           <%= time_ago_in_words(area.created_at) %>
         </time>
         
-          <%= link_to area_update_path metod: :post do %>
+        <%= link_to area_path(area) do %>
           <i class="fas fa-car-side"></i>移動</i>
         <% end %>
 

@@ -1,6 +1,6 @@
 <h5>テリ登録</h5>
 <div class="send">
-  <%= form_for @area, url: area_create_path do |f| %>
+  <%= form_for @area, url: areas_path do |f| %>
     <div class="field area">
       <%= f.label :ward, "区市" %>
       <%= f.select :ward, ['千代田区', '中央区', '港区','新宿区','文京区','台東区', '墨田区', '江東区', '品川区', '目黒区' , '大田区',
@@ -11,9 +11,20 @@
     </div>
     
     <div class="field town">
-      <%= f.label :town, "町村" %>
-      <%= f.text_field :town, placeholder: "町名を入力" ,class: 'text' %>
-      <%= f.select :town, Area.all.map{|t| [t.town, t.town]}, include_blank: '町名を選択' %>
+    
+      <%= link_to 'New Area', new_area_path, remote: true, class: "btn btn-lg btn-primary" %>
+      <div id="user-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true"></div>
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <%= f.label :town, "町村" %>
+            <%= f.select :town, Area.all.map{|t| [t.town, t.town]}, include_blank: '町名を選択' %>
+          </div>
+        </div>
+
+      <label :town>その他
+      <%= f.radio_button :town, "" %> 
+      <%= f.text_field :town, placeholder: "ここに入力" ,class: 'text', check_box: false %>
+      </label>
     </div>
     
     <div class="field city_block">
