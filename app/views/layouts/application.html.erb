@@ -8,6 +8,45 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
      <script src="https://kit.fontawesome.com/dc66eed749.js" crossorigin="anonymous"></script>
     <%= render 'layouts/shim' %> 
+
+     <script type="text/javascript">
+    //  関数 ある値を引き渡したときに実行される function()として値なしの引き渡しでも可能
+    //  ミキサーのようなもの 例ミキサーならオレンジを渡してミキサー内でオレンジ液体を混ぜる結果オレンジジュース
+    $(function() {
+        // クリックでモーダルオープン
+        // div triggerをクリックしたらポップアップでチェックボックスまとまりが表示される
+        $('.trigger').on('click', function() {
+            $('#modal').modal('show');
+        });
+        // 空配列 準備
+        array = [];
+        // 分からない
+        change_input_value(array);
+        // チェックボックスをチェックしたら発動
+        $('input[type="checkbox"]').click(function() {
+            // チェックされているか配列で管理
+            // チェックされた値を変数numberに入れる
+            $number = $(this).val();
+            // 変数numberを空の配列にセットそれは値がどれかに限らず全て1になる
+            array[$number] = 1;
+            // チェックが外されたら配列のその値を削除
+            // もしもチェックが外されたらチェックボックスの値を削除
+            if ($(this)[0].checked == false) {
+                delete array[$number];
+            }
+            // 配列のkeyを渡す
+            // change_input_valueにチェックされた値が保持されていれば値を渡す
+            change_input_value(Object.keys(array));
+        });
+        // inputタグのvalueを変更
+        // 以降分からず
+        function change_input_value(array) {
+            input_values = $('#input');
+            input_values.val(array);
+        }
+    });
+  </script> 
+
   </head>
 
   <body>
@@ -23,6 +62,8 @@
         $(".alert").slideUp();
         }, 3000);
       </script>
+
+        
     </div>
   </body>
 </html>

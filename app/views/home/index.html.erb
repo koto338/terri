@@ -29,7 +29,7 @@
           <%= time_ago_in_words(area.created_at) %>
         </time>
         
-        <%= link_to area_path(area) do %>
+        <%= link_to area_path(area.id, metod: :post) do %>
           <i class="fas fa-car-side"></i>移動</i>
         <% end %>
 
