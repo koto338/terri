@@ -9,57 +9,61 @@
       '国立市', '福生市', '狛江市','東大和市','清瀬市','東久留米市','武蔵村山市','多摩市','稲城市','羽村市', 'あきる野市', '西東京市'],
       { include_blank: '区市・区名を選択' }, { class: 'select'} %>
     </div>
-    
 
+   
+    <!-- Modal  切り替えボタンの設定 -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Modal">
+      選択してください
+    </button>
+  
+    <!-- モーダルの設定 -->
 
+    <div class="modal fade" id="Modal" tabindex="-1" role="dialog" aria-labelledby="Modal" aria-hidden="true">
+      <!--以下modal-dialogのCSSの部分で modal-lgやmodal-smを追加するとモーダルのサイズを変更することができる-->
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="Modal">町名を選択</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="閉じる">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          
+          <div class="modal-body">
+            <%= form_for @area, url: areas_path do |f| %>
+            <ul>
+              <li>
+                <%= f.label :town, "町村" %>
+                <%= f.radio_button :town, Area.all.map(&:town) %>
+              
+                <!-- サンプルコード -->
+                <input  id="1" type="checkbox" name="checkbox"  />
+                  1
+                <input id="2" type="checkbox" name="checkbox"  />
+                  2
+              </li>
+            </ul>
+            <% end %>
+          </div>
 
-     
-    <div class="container">
-      <div class="trigger mt-5">
-        ここにモーダルでチェックした値をいれたい
-        <input id="input" type="text" class="form-control" value="" placeholder="選択して下さい" disabled>
-      </div>
-
-      <!-- Modal -->
-      <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content" style="margin-top:150px">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-          </button>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
+            <button type="button" class="btn btn-primary">保存</button>
+          </div>
         </div>
-        <div class="modal-body">
-          <input id="1" type="checkbox" name="checkbox" />
-          1
-          <input id="2" type="checkbox" name="checkbox" />
-          2
-          <input id="3" type="checkbox" name="checkbox" />
-          3
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-        </div>
-        </div>
-      </div>
       </div>
     </div>
 
-   
 
-
-
-
-
-
-
-
-    <div class="field town">
+    <%
+=begin%>
+ <div class="field town">
       <%= f.label :town, "町村" %>
       <%= f.text_field :town, placeholder: "町名を入力" ,class: 'text' %>
       <%= f.select :town, Area.all.map{|t| [t.town, t.town]}, include_blank: '町名を選択' %>
-    </div>
+    </div> 
+<%
+=end%>
 
     <div class="field city_block">
       <%= f.label :city_block, "番地" %>
