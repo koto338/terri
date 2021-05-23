@@ -11,7 +11,8 @@
     </div>
 
    
-    <!-- Modal  切り替えボタンの設定 -->
+ 
+ <!-- Modal  切り替えボタンの設定 -->
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Modal">
       選択してください
     </button>
@@ -28,22 +29,11 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          
+
           <div class="modal-body">
-            <%= form_for @area, url: areas_path do |f| %>
-            <ul>
-              <li>
-                <%= f.label :town, "町村" %>
-                <%= f.radio_button :town, Area.all.map(&:town) %>
-              
-                <!-- サンプルコード -->
-                <input  id="1" type="checkbox" name="checkbox"  />
-                  1
-                <input id="2" type="checkbox" name="checkbox"  />
-                  2
-              </li>
-            </ul>
-            <% end %>
+            <%= f.label :town, "町村" %>
+            <%= f.select :town, Area.all.map{|t| [t.town, t.town]}, include_blank: '町名を選択' %>
+            <%= f.text_field :town, placeholder: "なければここに入力" ,class: 'text' %>
           </div>
 
           <div class="modal-footer">
@@ -52,18 +42,8 @@
           </div>
         </div>
       </div>
-    </div>
-
-
-    <%
-=begin%>
- <div class="field town">
-      <%= f.label :town, "町村" %>
-      <%= f.text_field :town, placeholder: "町名を入力" ,class: 'text' %>
-      <%= f.select :town, Area.all.map{|t| [t.town, t.town]}, include_blank: '町名を選択' %>
     </div> 
-<%
-=end%>
+
 
     <div class="field city_block">
       <%= f.label :city_block, "番地" %>
