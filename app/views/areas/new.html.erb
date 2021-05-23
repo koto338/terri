@@ -10,8 +10,43 @@
       { include_blank: '区市・区名を選択' }, { class: 'select'} %>
     </div>
 
-   
+
+        
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+      町名登録を選択
+    </button>
+
+  
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">町名登録</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <%= form_for @area, url: areas_path, remote: true do |f| %>
+            <div class="modal-body">
+              <div class="form-group">
+                <%= f.label :town, "町村" %>
+                <%= f.select :town, Area.all.map{|t| [t.town, t.town]}, include_blank: '町名を選択' %> 
+                <%= f.text_field :town, placeholder: "なければここに入力" ,class: 'form-control' %>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
+              <%= f.submit "登録する", class: "btn btn-primary" %>
+            </div>
+          <% end %>
+          </div>
+        </div>
+      </div>
+
+      
  
+ <%
+=begin%>
  <!-- Modal  切り替えボタンの設定 -->
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Modal">
       選択してください
@@ -43,7 +78,9 @@
         </div>
       </div>
     </div> 
-
+ 
+<%
+=end%>
 
     <div class="field city_block">
       <%= f.label :city_block, "番地" %>
