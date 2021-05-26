@@ -30,25 +30,14 @@
         $('.trigger').on('click', function() {
           $('#modal').modal('show');
         });
-        array = [];
-        change_input_value(array);
-        // チェックボックスをチェックしたら発動
-        $('input[type="checkbox"]').click(function() {
-          // チェックされているか配列で管理
-          $number = $(this).val();
-          array[$number] = 1;
-          // チェックが外されたら配列のその値を削除
-          if ($(this)[0].checked == false) {
-            delete array[$number];
-          }
-          // 配列のkeyを渡す
-          change_input_value(Object.keys(array));
-        });
-        // inputタグのvalueを変更
-        function change_input_value(array) {
-          input_values = $('#input');
-          input_values.val(array);
-        }
+    
+        $("#add").click(function(){
+          var town = $('#town').val();
+          var add = $('#add').val();
+          var input = $('#input').val();
+          console.log( town );
+          $("#input").val(town);
+        });   
       });
     </script>   
   </body>
