@@ -32,11 +32,15 @@
         });
     
         $("#add").click(function(){
+          // 直接入力
           var town = $('#town').val();
-          var add = $('#add').val();
-          var input = $('#input').val();
-          console.log( town );
-          $("#input").val(town);
+          console.log(town);
+          $('#input').val(town);
+
+          // DBから選択
+          var area = $('#area option:selected').text();
+          console.log(area);
+          $('#input').val(area);
         });   
       });
     </script>   
