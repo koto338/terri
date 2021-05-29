@@ -42,8 +42,7 @@
         $('#area').change(function() {
           var town = $('#town').val("")
           var area = $('#area option:selected').text();
-          if (town!=="") {
-            console.log(area);
+          if (area!=="") {
             $('#input').val(area);
           }
         });
