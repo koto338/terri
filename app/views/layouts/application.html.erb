@@ -29,19 +29,24 @@
         // クリックでモーダルオープン
         $('.trigger').on('click', function() {
           $('#modal').modal('show');
-        });
-    
-        $("#add").click(function(){
+        }); 
           // 直接入力
-          var town = $('#town').val();
-          console.log(town);
-          $('#input').val(town);
-
-          // DBから選択
+        $("#town").on('input', function(){
+          var area = $('#area option:selected').text("");
+          var town = $('#town').val()
+          if (town!=="") {
+            $('#input').val(town);
+          };
+        });
+        // DBから選択
+        $('#area').change(function() {
+          var town = $('#town').val("")
           var area = $('#area option:selected').text();
-          console.log(area);
-          $('#input').val(area);
-        });   
+          if (town!=="") {
+            console.log(area);
+            $('#input').val(area);
+          }
+        });
       });
     </script>   
   </body>
