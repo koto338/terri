@@ -27,10 +27,10 @@
               </button>
             </div>
             <div class="modal-body">
-              <select id="area"
-                #{<%= f.select :town, Area.all.map(&:town), include_blank: "町名を選択" %>}>
-              </select>
-              <input type="text" id="town" placeholder="なければここに入力" >
+              <div id="area"> 
+                <%= f.select :town, Area.all.map(&:town), include_blank: "町名を選択" %>
+              </div>
+              <input type="text" id="town" name="area[town]" placeholder="なければここに入力">
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-primary" data-dismiss="modal">決定</button>
