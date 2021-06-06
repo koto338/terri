@@ -31,22 +31,20 @@
           $('#modal').modal('show');
         }); 
           // 直接入力
-        $("#town").on('input', function(){
-          var area = $('#area option:selected').text("");
+        $("#town").on('input', function()    {
+          var db = $('#db option:selected').text("");
           var town = $('#town').val()
-          if (town!=="") {
-            $('#input').val(town);
-          };
+          $('#input').val(town);
+          $('#db').remove();
         });
         // DBから選択
-        $('#area').change(function() {
+        $('#db').change(function()           {
           var town = $('#town').val("")
-          var area = $('#area option:selected').text();
-          if (area!=="") {
-            $('#input').val(area);
-          }
-        });
+          var db = $('#db option:selected').text();
+          $('#input').val(db); 
+          $('#town').remove();
+        });  
       });
-    </script>   
+    </script> 
   </body>
 </html>

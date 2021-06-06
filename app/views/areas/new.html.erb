@@ -13,7 +13,8 @@
     <div class="container">
       <div class="trigger">
         <h6>町村</h6>
-        <input id="input" type="text" class="form-control" value="" placeholder="町名を選択してください" disabled>
+        <input id="input" type="text" class="form" value="" placeholder="町名を選択" disabled>
+        <%= link_to "やり直す", new_area_path %>
       </div>
 
       <!-- Modal -->
@@ -27,13 +28,13 @@
               </button>
             </div>
             <div class="modal-body">
-              <div id="area"> 
+              <div id="db"> 
                 <%= f.select :town, Area.all.map(&:town), include_blank: "町名を選択" %>
               </div>
               <input type="text" id="town" name="area[town]" placeholder="なければここに入力">
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-primary" data-dismiss="modal">決定</button>
+              <button type="button" id="push" class="btn btn-primary" data-dismiss="modal">決定</button>
             </div>
           </div>
         </div>
