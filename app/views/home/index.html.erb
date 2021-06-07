@@ -24,12 +24,12 @@
         <%= area.ward %>
         <%= area.town %>
         <%= "#{area.city_block}丁目" %>
-        
+
         <time datetime="<%= area.created_at %>">
           <%= time_ago_in_words(area.created_at) %>
         </time>
         
-        <%= link_to area_update_path metod: :post do %>
+        <%= link_to area_path(area.id, metod: :post) do %>
           <i class="fas fa-car-side"></i>移動</i>
         <% end %>
 
@@ -50,11 +50,12 @@
         <%= area.ward %>
         <%= area.town %>
         <%= "#{area.city_block}丁目" %>
+
         <time datetime="<%= area.created_at %>">
           <%= time_ago_in_words(area.created_at) %>
         </time>
         
-          <%= link_to area_update_path metod: :post do %>
+        <%= link_to area_path(area) do %>
           <i class="fas fa-car-side"></i>移動</i>
         <% end %>
 

@@ -3,26 +3,48 @@
   <head>
     <title>Terri</title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-     <script src="https://kit.fontawesome.com/dc66eed749.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/dc66eed749.js" crossorigin="anonymous"></script>
     <%= render 'layouts/shim' %> 
   </head>
 
   <body>
     <div class="footerFixed">
       <div class="container">
-      <%= render 'layouts/error_messages' %>
-      <%= yield %>
+        <%= render 'layouts/error_messages' %>
+        <%= yield %>
       </div>
       <%= render 'layouts/footer' %>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-      <script>
-        window.setTimeout(function() {
+    </div>
+
+    <script>
+      window.setTimeout(function() {
         $(".alert").slideUp();
         }, 3000);
-      </script>
-    </div>
+    </script> 
+
+    <script type="text/javascript">
+      $(function() {
+        // クリックでモーダルオープン
+        $('.trigger').on('click', function() {
+          $('#modal').modal('show');
+        }); 
+          // 直接入力
+        $("#town").on('input', function()    {
+          var db = $('#db option:selected').text("");
+          var town = $('#town').val()
+          $('#input').val(town);
+          $('#db').remove();
+        });
+        // DBから選択
+        $('#db').change(function()           {
+          var town = $('#town').val("")
+          var db = $('#db option:selected').text();
+          $('#input').val(db); 
+          $('#town').remove();
+        });  
+      });
+    </script> 
   </body>
 </html>
