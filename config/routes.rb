@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  
+  # 訪問履歴
+  resources :visits, only: [:new, :create]
+
   # テリ登録
   resources :areas, only: [:new, :create, :update]
   
