@@ -1,0 +1,53 @@
+<%= render 'layouts/header' %>
+<div class="title">
+  <div class="sample_image">
+    <img src= <%= user_iamge(@user)%> class="icon_image">
+  </div>
+  <h1><%= current_user.username %>のテリトリ―</h1>
+</div>
+
+<h4 class="month">6ヶ月テリ</h4>
+<div class="main">
+  <ul>
+    <% @areas.each do |area| %>
+      <% if area.status == 1 %>
+      <li class="city">
+        <%= area.ward %>
+        <%= area.town %>
+        <%= "#{area.city_block}丁目" %>
+
+        <time datetime="<%= area.created_at %>">
+          <%= time_ago_in_words(area.created_at) %>
+        </time>
+      <% end %>
+
+    <% @visits.each do |visit| %>
+      <%=visit.customer %>
+      <%= visit.appointment %>
+      <%= visit.visit %>
+      <%= visit.contract %>
+      <%= visit.note %>
+    <% end %>
+    <% end %>  
+  </ul>
+</div>
+
+<h4 class="month">訳テリ</h4>
+<div class="main">
+  <ul>
+    <% @areas.each do |area| %>
+      <% if area.status == 2 %>
+      <li class="city">
+        <%= area.ward %>
+        <%= area.town %>
+        <%= "#{area.city_block}丁目" %>
+
+        <time datetime="<%= area.created_at %>">
+          <%= time_ago_in_words(area.created_at) %>
+        </time>
+      </li>
+      <% end %>
+    <% end %>
+  </ul>
+</div>
+
