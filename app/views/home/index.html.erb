@@ -6,7 +6,7 @@
   <h1><%= current_user.username %>のテリトリ―</h1>
 </div>
 
-<% if @areas.blank? %>
+<% if @visits.blank? %>
 <div class="message">
   <h3>テリを登録してみよう！</h3>
   <div class="icon">
@@ -18,15 +18,15 @@
 <h4 class="month">6ヶ月テリ</h4>
 <div class="main">
   <ul>
-    <% @areas.each do |area| %>
-      <% if area.status == 1 %>
+    <% @visits.each do |visit| %>
+      <% if visit.area.status == 1 %>
       <li class="city">
-        <%= area.ward %>
-        <%= area.town %>
+        <%= visit.area.ward %>
+        <%= visit.area.town %>
         <%= "#{area.city_block}丁目" %>
 
-        <time datetime="<%= area.created_at %>">
-          <%= time_ago_in_words(area.created_at) %>
+        <time datetime="<%= visit.area.created_at %>">
+          <%= time_ago_in_words(visit.area.created_at) %>
         </time>
         
         <%= link_to area_path(area.id, metod: :post) do %>
@@ -44,15 +44,15 @@
 <h4 class="month">訳テリ</h4>
 <div class="main">
   <ul>
-    <% @areas.each do |area| %>
-      <% if area.status == 2 %>
+    <% @visits.each do |visit| %>
+      <% if visit.area.status == 2 %>
       <li class="city">
-        <%= area.ward %>
-        <%= area.town %>
-        <%= "#{area.city_block}丁目" %>
+        <%= visit.area.ward %>
+        <%= visit.area.town %>
+        <%= "#{visit.area.city_block}丁目" %>
 
-        <time datetime="<%= area.created_at %>">
-          <%= time_ago_in_words(area.created_at) %>
+        <time datetime="<%= visit.area.created_at %>">
+          <%= time_ago_in_words(visit.area.created_at) %>
         </time>
         
         <%= link_to area_path(area) do %>
