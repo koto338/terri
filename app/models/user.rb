@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_many :visit_histories
+  has_many :areas
   mount_uploader :image, ImageUploader
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable

@@ -9,7 +9,7 @@
 <h4 class="month">6ヶ月テリ</h4>
 <div class="main">
   <ul>
-    <% @areas.each do |area| %>
+    <% @user_areas.each do |area| %>
       <% if area.status == 1 %>
       <li class="city">
         <%= area.ward %>
@@ -21,7 +21,7 @@
         </time>
       <% end %>
 
-    <% @visits.each do |visit| %>
+    <% @user_visits.each do |visit| %>
       <%=visit.customer %>
       <%= visit.appointment %>
       <%= visit.visit %>
@@ -35,7 +35,7 @@
 <h4 class="month">訳テリ</h4>
 <div class="main">
   <ul>
-    <% @areas.each do |area| %>
+    <%  @user_areas.each do |area| %>
       <% if area.status == 2 %>
       <li class="city">
         <%= area.ward %>

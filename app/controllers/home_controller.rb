@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
   def index
     @user = current_user
-    @visits = VisitHistory.where(user_id: current_user.id)
+    @user_areas = current_user.areas
   end
 end

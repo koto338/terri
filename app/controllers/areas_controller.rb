@@ -27,6 +27,6 @@ class AreasController < ApplicationController
   private
 
     def area_params
-      params.require(:area).permit(:ward, :town, :city_block, :status)
+      params.require(:area).permit(:ward, :town, :city_block, :status).merge(user_id: current_user.id)
     end
 end

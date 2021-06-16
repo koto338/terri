@@ -6,7 +6,7 @@
   <h1><%= current_user.username %>のテリトリ―</h1>
 </div>
 
-<% if @visits.blank? %>
+<% if @user_areas.blank? %>
 <div class="message">
   <h3>テリを登録してみよう！</h3>
   <div class="icon">
@@ -18,22 +18,22 @@
 <h4 class="month">6ヶ月テリ</h4>
 <div class="main">
   <ul>
-    <% @visits.each do |visit| %>
-      <% if visit.area.status == 1 %>
+    <% @user_areas.each do |area| %>
+      <% if area.status == 1 %>
       <li class="city">
-        <%= visit.area.ward %>
-        <%= visit.area.town %>
+        <%= area.ward %>
+        <%= area.town %>
         <%= "#{area.city_block}丁目" %>
 
-        <time datetime="<%= visit.area.created_at %>">
-          <%= time_ago_in_words(visit.area.created_at) %>
+        <time datetime="<%= area.created_at %>">
+          <%= time_ago_in_words(area.created_at) %>
         </time>
         
         <%= link_to area_path(area.id, metod: :post) do %>
           <i class="fas fa-car-side"></i>移動</i>
         <% end %>
 
-        <%= link_to new_visit_path do %>
+        <%= link_to new_visit_path(area) do %>
           <i class="far fa-edit">訪問履歴リンクへ</i>
         <% end %>
       <% end %>
@@ -44,22 +44,22 @@
 <h4 class="month">訳テリ</h4>
 <div class="main">
   <ul>
-    <% @visits.each do |visit| %>
-      <% if visit.area.status == 2 %>
+    <% @user_areas.each do |area| %>
+      <% if area.status == 2 %>
       <li class="city">
-        <%= visit.area.ward %>
-        <%= visit.area.town %>
-        <%= "#{visit.area.city_block}丁目" %>
+        <%= area.ward %>
+        <%= area.town %>
+        <%= "#{area.city_block}丁目" %>
 
-        <time datetime="<%= visit.area.created_at %>">
-          <%= time_ago_in_words(visit.area.created_at) %>
+        <time datetime="<%= area.created_at %>">
+          <%= time_ago_in_words(area.created_at) %>
         </time>
         
         <%= link_to area_path(area) do %>
           <i class="fas fa-car-side"></i>移動</i>
         <% end %>
 
-        <%= link_to "#" do %>
+        <%= link_to new_visit_path(area) do %>
           <i class="far fa-edit">訪問履歴リンクへ</i>
         <% end %>
       </li>
