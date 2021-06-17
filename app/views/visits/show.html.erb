@@ -6,48 +6,53 @@
   <h1><%= current_user.username %>のテリトリ―</h1>
 </div>
 
+<%= link_to visit_new_path(@area) do %>
+  <i class="far fa-edit">訪問履歴の登録</i>
+<% end %>
+
+<% if @area.status == 1 %>
 <h4 class="month">6ヶ月テリ</h4>
 <div class="main">
-  <ul>
-    <% @user_areas.each do |area| %>
-      <% if area.status == 1 %>
-      <li class="city">
-        <%= area.ward %>
-        <%= area.town %>
-        <%= "#{area.city_block}丁目" %>
+  <div class="city">
+    <%= @area.ward %> 
+    <%= @area.town %>
+    <%= "#{@area.city_block}丁目" %>
+  <time datetime="<%= @area.created_at %>">
+    <%= time_ago_in_words(@area.created_at) %>
+  </time>
+  <div class="vusit">
+    <%
+=begin%>
+ <%= @visit.customer %>
+    <%= @visit.appointment %>
+    <%= @visit.visit %>
+    <%= @visit.contract %>
+    <%= @visit.note %> 
+<%
+=end%>
+  </div>
+<% end %>
 
-        <time datetime="<%= area.created_at %>">
-          <%= time_ago_in_words(area.created_at) %>
-        </time>
-      <% end %>
-
-    <% @user_visits.each do |visit| %>
-      <%=visit.customer %>
-      <%= visit.appointment %>
-      <%= visit.visit %>
-      <%= visit.contract %>
-      <%= visit.note %>
-    <% end %>
-    <% end %>  
-  </ul>
-</div>
-
+<% if @area.status == 2 %>
 <h4 class="month">訳テリ</h4>
 <div class="main">
-  <ul>
-    <%  @user_areas.each do |area| %>
-      <% if area.status == 2 %>
-      <li class="city">
-        <%= area.ward %>
-        <%= area.town %>
-        <%= "#{area.city_block}丁目" %>
-
-        <time datetime="<%= area.created_at %>">
-          <%= time_ago_in_words(area.created_at) %>
-        </time>
-      </li>
-      <% end %>
-    <% end %>
-  </ul>
+  <div class="city">
+    <%= @area.ward %>
+    <%= @area.town %>
+    <%= "#{@area.city_block}丁目" %>
+  <time datetime="<%= @area.created_at %>">
+    <%= time_ago_in_words(@area.created_at) %>
+  </time>
+  <div class="vusit">
+    <%
+=begin%>
+ <%= @visit.customer %>
+    <%= @visit.appointment %>
+    <%= @visit.visit %>
+    <%= @visit.contract %>
+    <%= @visit.note %> 
+<%
+=end%>
+  </div>
 </div>
-
+<% end %>
