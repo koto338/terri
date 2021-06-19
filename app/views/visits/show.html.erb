@@ -6,12 +6,13 @@
   <h1><%= current_user.username %>のテリトリ―</h1>
 </div>
 
-<%= link_to visit_new_path(@area) do %>
+<% if @area.status == 1 %>
+
+<h4 class="month">6ヶ月テリ</h4>
+<%= link_to visit_new_path do %>
   <i class="far fa-edit">訪問履歴の登録</i>
 <% end %>
 
-<% if @area.status == 1 %>
-<h4 class="month">6ヶ月テリ</h4>
 <div class="main">
   <div class="city">
     <%= @area.ward %> 
@@ -20,21 +21,32 @@
   <time datetime="<%= @area.created_at %>">
     <%= time_ago_in_words(@area.created_at) %>
   </time>
+
   <div class="vusit">
-    <%
-=begin%>
- <%= @visit.customer %>
-    <%= @visit.appointment %>
-    <%= @visit.visit %>
-    <%= @visit.contract %>
-    <%= @visit.note %> 
-<%
-=end%>
-  </div>
+    <ul>
+      <% @visits.each do |visit| %> 
+        <li>
+          <%= visit.customer %>
+          <%= visit.appointment %>
+          <%= visit.contract %>
+          <%= visit.note %> 
+          <time datetime="<%= visit.created_at %>">
+            <%= time_ago_in_words(visit.created_at) %>
+          </time>
+        </li>
+      <% end %> 
+    </ul>   
+  </div> 
 <% end %>
+</div>
 
 <% if @area.status == 2 %>
+
 <h4 class="month">訳テリ</h4>
+<%= link_to visit_new_path do %>
+  <i class="far fa-edit">訪問履歴の登録</i>
+<% end %>
+
 <div class="main">
   <div class="city">
     <%= @area.ward %>
@@ -43,16 +55,21 @@
   <time datetime="<%= @area.created_at %>">
     <%= time_ago_in_words(@area.created_at) %>
   </time>
+   
   <div class="vusit">
-    <%
-=begin%>
- <%= @visit.customer %>
-    <%= @visit.appointment %>
-    <%= @visit.visit %>
-    <%= @visit.contract %>
-    <%= @visit.note %> 
-<%
-=end%>
-  </div>
+    <ul>
+      <% @visits.each do |visit| %> 
+        <li>
+          <%= visit.customer %>
+          <%= visit.appointment %>
+          <%= visit.contract %>
+          <%= visit.note %> 
+          <time datetime="<%= visit.created_at %>">
+            <%= time_ago_in_words(visit.created_at) %>
+          </time>
+        </li>
+      <% end %> 
+    </ul>   
+  </div> 
 </div>
 <% end %>
