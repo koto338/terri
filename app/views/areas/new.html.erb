@@ -56,6 +56,8 @@
       <%= f.radio_button :status, "2" %>
     </div>
 
+    <%= hidden_field_tag :user_id, current_user.id %>
+    
     <div class="field wrap">
       <input type="submit" class="btn btn-primary" value="登録する", data-confirm="テリに登録しますか？"  >
     </div>

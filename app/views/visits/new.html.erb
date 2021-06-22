@@ -1,0 +1,36 @@
+<h5>訪問履歴の登録</h5>
+<div class="send">
+  <%= form_for @visit, url: visits_path do |f| %>
+    <div class="field">
+      <p>顧客名</p>
+      <%= f.text_field :customer, placeholder: "○○邸" ,class: 'text' %>
+    </div>
+
+    <div class="field">
+      <p>アポイント</p>
+      <%= f.text_field :appointment, placeholder: "3/1 Aアポ" ,class: 'text' %>
+    </div>
+
+    <div class="field">
+      <p>訪問日</p>
+      <%= f.text_field :visit, placeholder: "4/1 9時訪問" ,class: 'text' %>
+    </div>
+
+    <div class="field">
+      <p>成約</p>
+      <%= f.text_field :contract, placeholder: "4/5 成約" ,class: 'text' %>
+    </div>
+
+    <div class="field">
+      <p>memo</p>
+      <%= f.text_field :note, placeholder: "メモを入力" ,class: 'text' %>
+    </div>
+
+    <%= hidden_field_tag :user_id, current_user.id %>
+    <%= hidden_field_tag :area_id, @area.id %>  
+
+    <div class="field wrap">
+      <input type="submit" class="btn btn-primary" value="登録する" >
+    </div>
+  <% end %>
+</div> 

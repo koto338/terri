@@ -1,0 +1,75 @@
+<%= render 'layouts/header' %>
+<div class="title">
+  <div class="sample_image">
+    <img src= <%= user_iamge(@user)%> class="icon_image">
+  </div>
+  <h1><%= current_user.username %>のテリトリ―</h1>
+</div>
+
+<% if @area.status == 1 %>
+
+<h4 class="month">6ヶ月テリ</h4>
+<%= link_to visit_new_path do %>
+  <i class="far fa-edit">訪問履歴の登録</i>
+<% end %>
+
+<div class="main">
+  <div class="city">
+    <%= @area.ward %> 
+    <%= @area.town %>
+    <%= "#{@area.city_block}丁目" %>
+  <time datetime="<%= @area.created_at %>">
+    <%= time_ago_in_words(@area.created_at) %>
+  </time>
+
+  <div class="vusit">
+    <ul>
+      <% @visits.each do |visit| %> 
+        <li>
+          <%= visit.customer %>
+          <%= visit.appointment %>
+          <%= visit.contract %>
+          <%= visit.note %> 
+          <time datetime="<%= visit.created_at %>">
+            <%= time_ago_in_words(visit.created_at) %>
+          </time>
+        </li>
+      <% end %> 
+    </ul>   
+  </div> 
+<% end %>
+</div>
+
+<% if @area.status == 2 %>
+
+<h4 class="month">訳テリ</h4>
+<%= link_to visit_new_path do %>
+  <i class="far fa-edit">訪問履歴の登録</i>
+<% end %>
+
+<div class="main">
+  <div class="city">
+    <%= @area.ward %>
+    <%= @area.town %>
+    <%= "#{@area.city_block}丁目" %>
+  <time datetime="<%= @area.created_at %>">
+    <%= time_ago_in_words(@area.created_at) %>
+  </time>
+   
+  <div class="vusit">
+    <ul>
+      <% @visits.each do |visit| %> 
+        <li>
+          <%= visit.customer %>
+          <%= visit.appointment %>
+          <%= visit.contract %>
+          <%= visit.note %> 
+          <time datetime="<%= visit.created_at %>">
+            <%= time_ago_in_words(visit.created_at) %>
+          </time>
+        </li>
+      <% end %> 
+    </ul>   
+  </div> 
+</div>
+<% end %>
