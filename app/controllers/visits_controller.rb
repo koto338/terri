@@ -24,10 +24,30 @@ class VisitsController < ApplicationController
       render :new
     end
   end
+
+  def edit
+    @visit = VisitHistory.find(params[:id])
+  end
+
+  def update
+    @visit = VisitHistory.find(params[:id])
+    
+    if @visit.update(visit_update_params)
+      flash[:success] = "登録しました"
+      redirect_to visit_path(@visit.area_id)
+    else
+      flash[:danger] = "登録に失敗しました"
+      render :edit
+    end
+  end
   
   private
 
   def visit_params
     params.require(:visit_history).permit(:customer, :appointment, :visit, :contract, :note).merge(user_id: current_user.id, area_id: params[:area_id])
+  end
+
+  def visit_update_params
+    params.require(:visit_history).permit(:customer, :appointment, :visit, :contract, :note).merge(user_id: current_user.id)
   end
 end
