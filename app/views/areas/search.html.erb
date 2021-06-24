@@ -1,0 +1,16 @@
+<form class="search">
+  <input type="text" placeholder="検索ワードを入力" name="search" value="">
+</form>
+<% if params[:search].present? %>
+<uL>
+  <% @areas.each do |area| %>
+    <li>
+    <%= link_to visit_path(area.id) do %>
+      <%= area.ward %>
+      <%= area.town %>
+      <%= area.city_block %>
+    <% end %>
+    </li>
+  <% end %>
+</ul>
+<% end %>

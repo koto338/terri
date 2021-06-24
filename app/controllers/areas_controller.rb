@@ -23,6 +23,14 @@ class AreasController < ApplicationController
     redirect_to root_path
   end
 
+  # 検索
+  def search
+    @areas = Area.all
+
+    if params[:search].present?
+      @areas = Area.where("ward like? or town like?", "%#{params[:search]}%", "%#{params[:search]}%")
+    end 
+  end
 
   private
 
