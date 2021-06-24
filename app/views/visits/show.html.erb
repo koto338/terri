@@ -33,6 +33,7 @@
           <time datetime="<%= visit.created_at %>">
             <%= time_ago_in_words(visit.created_at) %>
           </time>
+          <%= link_to "編集", edit_visit_path(visit) %>
         </li>
       <% end %> 
     </ul>   
@@ -67,6 +68,7 @@
           <time datetime="<%= visit.created_at %>">
             <%= time_ago_in_words(visit.created_at) %>
           </time>
+          <%= link_to "編集", edit_visit_path(visit) %>
         </li>
       <% end %> 
     </ul>   
