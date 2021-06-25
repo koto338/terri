@@ -5,4 +5,16 @@ class Area < ApplicationRecord
     validates :town, presence: true
     validates :city_block, presence: true
     validates :status, presence: true
+
+    scope :search_areas, ->(params) do
+      find_by_sql([<<-SQL, "%#{params}%", "%#{params}%"])
+        SELECT
+          *
+        FROM
+          areas
+        WHERE
+          ward LIKE ?
+          OR town LIKE ?
+        SQL
+    end
 end

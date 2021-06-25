@@ -28,7 +28,7 @@ class AreasController < ApplicationController
     @areas = Area.all
 
     if params[:search].present?
-      @areas = Area.where("ward like? or town like?", "%#{params[:search]}%", "%#{params[:search]}%")
+      @areas = Area.search_areas(params[:search])
     end 
   end
 
