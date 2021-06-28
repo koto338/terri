@@ -7,14 +7,6 @@ class Area < ApplicationRecord
     validates :status, presence: true
 
     scope :search_areas, ->(params) do
-      find_by_sql([<<-SQL, "%#{params}%", "%#{params}%"])
-        SELECT
-          *
-        FROM
-          areas
-        WHERE
-          ward LIKE ?
-          OR town LIKE ?
-        SQL
+      where("ward LIKE? OR town LIKE?", "%#{params}%", "%#{params}%")
     end
-end
+  end
