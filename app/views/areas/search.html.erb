@@ -1,9 +1,9 @@
 <form class="search">
-  <input type="text" placeholder="検索ワードを入力" name="search" value="">
+  <input type="text" placeholder="検索ワードを入力" name="keyword" value="">
 </form>
-<% if params[:search].present? %>
-<uL>
-  <% @areas.each do |area| %>
+<% if params[:keyword].present? %>
+ <uL>
+  <% @producuts.each do |area| %>
     <li>
     <%= link_to visit_path(area.id) do %>
       <%= area.ward %>
@@ -13,4 +13,4 @@
     </li>
   <% end %>
 </ul>
-<% end %>
+<% end %>  

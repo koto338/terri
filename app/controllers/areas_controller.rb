@@ -25,13 +25,28 @@ class AreasController < ApplicationController
 
   # 検索
   def search
-    @areas = Area.all
+  #   @areas = Area.all
 
-    if params[:search].present?
-      @areas = Area.search_areas(params[:search])
-    end 
+  #   if params[:search].present?
+  #     @areas = Area.search_areas(params[:search])
+  #   end 
+  # end
+
+    sort = params[:sort] || "created_at DESC"
+    @keyword = params[:keyword]
+
+    if @keyword.present?
+      @products = []
+      # 分割したキーワードごとに検索
+      @keyword.split(/[[:blank:]]+/).each do |keyword|
+        next if keyword == ""
+        @products += Area.where('ward LIKE? OR town LIKE?', "%#{keyword}%", "%#{keyword}%")
+      end
+      @products.uniq!
+    else
+      @products = Area.order(sort)
+    end
   end
-
   private
 
     def area_params
