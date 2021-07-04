@@ -25,7 +25,6 @@ class AreasController < ApplicationController
 
   # 検索
   def search
-    sort = params[:sort] || "created_at DESC"
     @keyword = params[:keyword]
 
     if @keyword.present?
