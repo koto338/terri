@@ -1,29 +1,23 @@
-<div class="container">
-  <% if user_signed_in? %>
-  <footer class="footer">
-    <nav>
-      <div class="btn-toolbar">
-        <%= link_to root_path do %>
-          <button type="button" class="btn btn-info"><i class="fas fa-home fa-2x"></i><br>ホーム</button>
-        <% end %>
+<% if user_signed_in? %>
+  <div class="footer d-flex justify-content-between">
+    <%= link_to root_path do %>
+      <button type="button" class="btn-lg btn-info col-15"><i class="fas fa-home fa-2x"></i><br>ホーム</button>
+    <% end %>
         
-        <%= link_to edit_user_registration_path do %>
-          <button type="button" class="btn btn-info"><i class="fas fa-user-cog fa-2x"></i><br>設定</button>
-        <% end %>
+    <%= link_to edit_user_registration_path do %>
+      <button type="button" class="btn-lg btn-info col-15"><i class="fas fa-user-cog fa-2x"></i><br>設定</button>
+    <% end %>
         
-        <%= link_to new_area_path do %>
-          <button type="button" class="btn btn-info"><i class="fas fa-map-marker-alt fa-2x"></i><br>テリ登録</button>
-        <% end %>
+    <%= link_to new_area_path do %>
+      <button type="button" class="btn-lg btn-info col-15"><i class="fas fa-map-marker-alt fa-2x"></i><br>テリ登録</button>
+    <% end %>
         
-        <%= link_to search_path do %>
-          <button type="button" class="btn btn-info"><i class="fas fa-search fa-2x"></i><br>検索</button>
-        <% end %>
+    <%= link_to search_path do %>
+      <button type="button" class="btn-lg btn-info col-15"><i class="fas fa-search fa-2x"></i><br>検索</button>
+    <% end %>
         
-        <%=link_to "#" do %>
-          <button type="button" class="btn btn-info"><i class="fas fa-user-friends fa-2x"></i><br>ユーザー</button>
-        <% end %>
-      </div>
-    </nav>
-  </footer>
-  <% end %>
-</div>
+    <%=link_to "#" do %>
+      <button type="button" class="btn-lg btn-info col-15"><i class="fas fa-user-friends fa-2x"></i><br>ユーザー</button>
+    <% end %>
+  </div>
+<% end %>
