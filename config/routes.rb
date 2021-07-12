@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  # 検索
+  get 'search', to: 'areas#search', as: 'search'
   # 訪問履歴
   resources :visits, only: [:edit, :show, :create, :edit, :update]
   get 'visits/new/:id', to: 'visits#new', as: 'visit_new'

@@ -23,6 +23,24 @@ class AreasController < ApplicationController
     redirect_to root_path
   end
 
+  # 検索
+  def search
+    @keyword = params[:keyword]
+
+    if @keyword.present?
+      @areas = []
+      # 分割したキーワードごとに検索
+      @keyword.split(/[[:blank:]]+/).each do |keyword|
+        next if keyword == ""
+        @areas += Area.where('ward LIKE? OR town LIKE?', "%#{keyword}%", "%#{keyword}%")
+      end
+    end
+    if @areas.empty?
+      flash.now[:danger] = "該当しませんでした。"
+    end
+  end
+
+  
 
   private
 
