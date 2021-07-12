@@ -34,9 +34,10 @@ class AreasController < ApplicationController
         next if keyword == ""
         @areas += Area.where('ward LIKE? OR town LIKE?', "%#{keyword}%", "%#{keyword}%")
       end
-    end
-    if @areas.empty?
-      flash.now[:danger] = "該当しませんでした。"
+
+      if @areas.blank?
+        flash.now[:danger] = "該当しませんでした。"
+      end
     end
   end
 
