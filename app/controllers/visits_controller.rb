@@ -1,4 +1,11 @@
 class VisitsController < ApplicationController
+
+  # 過去テリ一覧リンク
+  def index
+    @user = current_user
+    @user_areas = current_user.areas
+  end
+
   # 訪問一覧
   def show
     @area = Area.find(params[:id])

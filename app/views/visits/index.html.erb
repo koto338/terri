@@ -1,0 +1,23 @@
+<%= render 'layouts/header' %>
+<h1><%= current_user.username %>さんの過去のテリトリ―</h1>
+
+<div class="main">
+  <h4 class="month">履歴一覧</div>
+<div class="main">
+  <ul>
+    <% @user_areas.each do |area| %>
+      <% if area.status == 0 %>
+      <li class="city">
+        <%= area.ward %>
+        <%= area.town %>
+        <%= "#{area.city_block}丁目" %>
+
+        <time datetime="<%= area.created_at %>">
+          <%= time_ago_in_words(area.created_at) %>
+        </time>
+    
+        <%= link_to visit_path(area) do %>
+          <i class="far fa-edit"></i>
+　　　 　<% end %>
+      <% end %>
+    <% end %>

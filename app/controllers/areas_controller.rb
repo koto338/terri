@@ -18,8 +18,8 @@ class AreasController < ApplicationController
 
   # 移動リンク
   def update
-    @area = Area.all
-    @area.update(status: 0)
+    area = Area.find(params[:id])
+    area.update(status: 0)
     redirect_to root_path
   end
 

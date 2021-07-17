@@ -2,10 +2,14 @@ Rails.application.routes.draw do
   # 検索
   get 'search', to: 'areas#search', as: 'search'
   # 訪問履歴
-  resources :visits, only: [:edit, :show, :create, :edit, :update]
+  resources :visits, only: [:index, :edit, :show, :create, :edit, :update]
   get 'visits/new/:id', to: 'visits#new', as: 'visit_new'
+ 
+   #   移動リンク　status: 0
+  get  'areas/(:id)/update', to: 'areas#update', as: 'area_update'
   # テリ登録
-  resources :areas, only: [:new, :create, :update]
+  resources :areas, only: [:new, :create]
+  
   
   # devise_for :users
   devise_for :users, controllers: {
