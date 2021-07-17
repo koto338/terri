@@ -1,21 +1,21 @@
 <%= render 'layouts/header' %>
 <div class="title">
   <div class="sample_image">
-    <img src= <%= user_iamge(@user)%> class="icon_image">
+   <img src= <%= user_iamge(@user)%> class="icon_image">
   </div>
-  <h1><%= current_user.username %>のテリトリ―</h1>
+  <h1 calss="navbar-brand"><%= current_user.username %>さんのテリトリ―</h1>
 </div>
 
 <% if @user_areas.blank? %>
 <div class="message">
   <h3>テリを登録してみよう！</h3>
   <div class="icon">
-    <i class="fas fa-angle-double-down fa-5x"></i>
+    <i class="fas fa-angle-double-down fa-5x faa-shake animated" style="color: #ffff33;"></i>
   </div>
 </div>
 
 <% else %>
-<h4 class="month">6ヶ月テリ</h4>
+<h4 class="month">6ヶ月</h4>
 <div class="main">
   <ul>
     <% @user_areas.each do |area| %>
@@ -28,20 +28,22 @@
         <time datetime="<%= area.created_at %>">
           <%= time_ago_in_words(area.created_at) %>
         </time>
-        
-        <%= link_to area_path(area.id, metod: :post) do %>
-          <i class="fas fa-car-side"></i>移動</i>
-        <% end %>
-
+    
         <%= link_to visit_path(area) do %>
-          <i class="far fa-edit">訪問履歴リンクへ</i>
+          <i class="far fa-edit"></i>
+　　　 　<% end %>
+
+　　　　 <div class="delete">
+          <%= link_to area_path(area.id, metod: :post) do %>
+            手放す<i class="fas fa-car-side"></i>
+          <% end %>
+        </div>
         <% end %>
       <% end %>
-    <% end %>
   </ul>
 </div>
 
-<h4 class="month">訳テリ</h4>
+<h4 class="month">特別</h4>
 <div class="main">
   <ul>
     <% @user_areas.each do |area| %>
@@ -54,14 +56,16 @@
         <time datetime="<%= area.created_at %>">
           <%= time_ago_in_words(area.created_at) %>
         </time>
-        
-        <%= link_to area_path(area) do %>
-          <i class="fas fa-car-side"></i>移動</i>
+    
+        <%= link_to visit_path(area) do %>
+          <i class="far fa-edit"></i>
         <% end %>
 
-        <%= link_to visit_path(area) do %>
-          <i class="far fa-edit">訪問履歴リンクへ</i>
-        <% end %>
+　　　　<div class="delete">
+          <%= link_to area_path(area.id, metod: :post) do %>
+            手放す<i class="fas fa-car-side"></i>
+          <% end %>
+        </div>
       </li>
       <% end %>
     <% end %>
