@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get  'areas/(:id)/update', to: 'areas#update', as: 'area_update'
   # テリ登録
   resources :areas, only: [:new, :create]
+ 
   
   
   # devise_for :users
@@ -17,6 +18,10 @@ Rails.application.routes.draw do
     passwords:     'users/passwords',
     registrations: 'users/registrations'
 }
+# ユーザー一覧ボタン
+  get 'users/(:id)/show',   to: 'home#show',  as: 'user_show'
+
+  get 'users/(:id)/area',   to: 'areas#show',  as: 'area_show'
   # トップページ  
   root 'home#index'
 

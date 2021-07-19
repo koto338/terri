@@ -37,7 +37,10 @@ class AreasController < ApplicationController
     end
   end
 
-  
+  def show
+    @user = User.find(params[:id])
+    @areas = Area.where(user_id: @user.id)
+  end
 
   private
 

@@ -1,0 +1,14 @@
+<div class="title">
+  <h1>ユーザー一覧</h1>
+</div>
+
+<% @users.each do |user| %>
+<div class="card">
+  <h4 class="card-header">
+    <div class="sample_image">
+      <img src= <%= user_iamge(user)%> class="icon_image">
+    </div>
+    <%= link_to user.username, area_show_path(user) %>
+  </h4>
+</div>
+<% end %>

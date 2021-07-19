@@ -1,0 +1,24 @@
+<%= @user.username %>
+
+
+<% @areas.each do |area| %>
+<% if area.status == 1 || area.status  == 2 %>
+  <ul>
+    <li class="city">
+      <%= area.ward %>
+      <%= area.town%>
+      <%= "#{area.city_block}丁目" %>
+
+      <time datetime="<%= area.created_at %>">
+        <%= time_ago_in_words(area.created_at) %>
+      </time> 
+
+      <%= link_to visit_path(area) do %>
+        <i class="far fa-edit"></i>  
+      <% end %>            
+    </li>  
+  </ul>    
+<% end %>
+<% end %>
+
+
