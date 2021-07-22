@@ -16,7 +16,6 @@
 
 <% else %>
 <h4 class="month">6ヶ月</h4>
-<div class="main">
   <ul>
     <% @user_areas.each do |area| %>
       <% if area.status == 1 %>
@@ -40,10 +39,10 @@
         <% end %>
       <% end %>
   </ul>
-</div>
+
 
 <h4 class="month">特別</h4>
-<div class="main">
+
   <ul>
     <% @user_areas.each do |area| %>
       <% if area.status == 2 %>
@@ -67,5 +66,4 @@
       <% end %>
     <% end %>
   </ul>
-</div>
 <% end %>
