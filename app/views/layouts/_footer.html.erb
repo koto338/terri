@@ -1,57 +1,11 @@
-
-
-
-<%
-=begin%>
-   
-
- <% if user_signed_in? %>
-  <div class="footer d-flex justify-content-between">
-    <%= link_to root_path do %>
-      <button type="button" class="btn-lg col-15"><i class="fas fa-home fa-1x"></i>
-       <div class="bottom_btn">ホーム</div></button>
-    <% end %>
-        
-    <%= link_to edit_user_registration_path do %>
-      <button type="button" class="btn-lg col-15"><i class="fas fa-user-cog fa-3x"></i>
-      <div class="bottom_btn">設定</div></button>
-    <% end %>
-        
-    <%= link_to new_area_path do %>
-      <button type="button" class="btn-lg col-15"><i class="fas fa-map-marker-alt fa-1x"></i>
-       <div class="bottom_btn">テリ登録</div></button>
-    <% end %>
-        
-    <%= link_to search_path do %>
-      <button type="button" class="btn-lg col-15"><i class="fas fa-search fa-1x"></i>
-       <div class="bottom_btn">検索</div></button> 
-<%
-=end%>
-    <%
-=begin%>
- <% end %>
-        
-
- <%=link_to user_show_path(@user) do %>
-      <button type="button" class="btn-lg col-15"><i class="fas fa-user-friends fa-1x"></i>
-       <div class="bottom_btn">ユーザー</div></button>
-    <% end %>
-  </div>      
-<%
-=end%>
-
-
-
-
-
 <% if user_signed_in? %>
 <nav class="navbar-light bg-light fixed-bottom">
   <ul class="nav nav-pills nav-justified">
-    <li class="nav-item border"><%= link_to root_path do %><i class="fas fa-home fa-2x"></i><div>ホーム</div><% end %></li>
-    <li class="nav-item border"><%= link_to edit_user_registration_path do %><i class="fas fa-user-cog fa-2x"></i><div>設定</div><% end %></li>
-    <li class="nav-item border"><%= link_to new_area_path do %><i class="fas fa-map-marker-alt fa-2x"></i><div>テリ登録</div><% end %></li>
-    <li class="nav-item border"><%= link_to search_path do %><i class="fas fas fa-search fa-2x"></i><div>検索</div><% end %></li>
-    <li class="nav-item border nav-link"><%=link_to user_show_path(@user) do %><i class="fas fa-user-friends fa-2x"></i><div>ユーザー</div><% end %></li>
+    <li class="nav-item border nav-link"><%= link_to root_path do %><i class="fas fa-home fa-2x"></i><div>ホーム</div><% end %></li>
+    <li class="nav-item border nav-link"><%= link_to edit_user_registration_path do %><i class="fas fa-user-cog fa-2x"></i><div>設定</div><% end %></li>
+    <li class="nav-item border nav-link"><%= link_to new_area_path do %><i class="fas fa-map-marker-alt fa-2x"></i><div>テリ登録</div><% end %></li>
+    <li class="nav-item border nav-link"><%= link_to search_path do %><i class="fas fas fa-search fa-2x"></i><div>検索</div><% end %></li>
+    <li class="nav-item border nav-link"><%=link_to user_show_path(@user) do %><i class="fas fa-user-friends fa-2x"></i><div>一覧</div><% end %></li>
   </ul>
 </nav>
 <% end %>
