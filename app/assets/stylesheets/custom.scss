@@ -59,8 +59,7 @@ h2 {
 .city {
     border-top: solid 3px #eee;
     list-style: none;
-    padding: 5px 5px 5px 5px;
-    font-size: 20px;
+    font-size: 15px;
     height: 80px;
 }
 
@@ -87,7 +86,7 @@ a {
 .fa-car-side {
     float: left;
     clear: both;
-    font-size: 14px;
+    font-size: 10px;
 }
 
 // テリが未登録なら
@@ -157,6 +156,11 @@ h5 {
 .icon {
     text-align: center;
     color: #528fff;
+}
+
+// footer
+.nav-item {
+    font-size: 10px;
 }
 
 /* アラート */
