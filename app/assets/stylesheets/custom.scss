@@ -7,6 +7,10 @@
     margin-top: 20px;
 }
 
+body {
+    padding-bottom: 20px;
+}
+
 // 余白なし
 .container-fluid {
     margin-right: 10;
@@ -31,7 +35,8 @@
 h1 {
     padding-top: 30px;
     padding-bottom: 90px;
-    text-align: center;
+    margin-left: 110px;
+    font-size: 10px;
 }
 
 // 6ヶ月テリ、ワケテリ
@@ -53,8 +58,8 @@ h1 {
 .city {
     border-top: solid 3px #eee;
     list-style: none;
-    padding: 20px 10px 20px 100px;
-    font-size: 40px;
+    padding: 10px 10px 20px 10px;
+    font-size: 30px;
 }
 
 li:last-child {
@@ -69,22 +74,26 @@ time {
 // 詳細リンク
 .fa-edit {
     float: right;
-    padding-right: 100px;
 }
+// 下線を消す
+a {
+    text-decoration:none !important;
+}  
+
 
 // 手放すリンク
-.delete {
-    font-size: 30px;
-    padding-left: 380px;
+.fa-car-side {
+    clear: both;
+    font-size: 14px;
 }
 
 // テリが未登録なら
  .message {
     clear: both;
     text-align: center;
-    margin-top: 900px;
+    margin-top: 800px;
     h3 {
-        font-size: 50px;
+        font-size: 30px;
     }
  }
 
@@ -136,34 +145,31 @@ time {
     margin-left: 150px;
 }
  /* footer */
-.footerFixed{
-    min-height: 100vh; /* ↑ヘッダーやフッターを含むすべての要素の高さ＝min-height:100vhになるように指定 */
-    position: relative;/*←相対位置*/
-    padding-bottom: 200px;/*←footerの高さ*/
-    box-sizing: border-box;/*←全て含めてmin-height:100vhに*/
-}
+// .footerFixed{
+//     min-height: 80vh; /* ↑ヘッダーやフッターを含むすべての要素の高さ＝min-height:100vhになるように指定 */
+//     position: relative;/*←相対位置*/
+//     padding-bottom: 80px;/*←footerの高さ*/
+//     box-sizing: border-box;/*←全て含めてmin-height:100vhに*/
+// }
 
-/* 5 Columns */
-.col-15, .col-sm-15, .col-md-15, .col-lg-15 {
-    min-height: 1px;
-    width: 192px;
-    height: 200px;   
-}
+// /* 5 Columns */
+// .col-15, .col-sm-15, .col-md-15, .col-lg-15 {
+//     min-height: 1px;
+//     width: 80px;
+//     height: 80px;   
+// }
 
-.footer {
-    width:100%;
-    position: absolute;
-    bottom: 0;
-    .btn-lg {
-        background: #00ccff;
-        color: white
-    } 
+// .footer {
+//     // width:100%;
+//     position: absolute;
+//     bottom: 0;
+//     .btn-lg {
+//         background: #00ccff;
+//         color: white
+//     } 
    
-}
-.bottom_btn {
-    // display: inline-block;
-    padding-top :20px;
-}
+// }
+
 
 
 h5 {
