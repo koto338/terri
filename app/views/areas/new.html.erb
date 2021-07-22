@@ -1,4 +1,4 @@
-<h1 class="mx-auto" style="width: 500px;">テリ登録</h1>
+<h2 class="mx-auto" style="width: 500px;">テリ登録</h2>
 <div class="send">
   <%= form_for @area, url: areas_path do |f| %>
     <div class="field area">
@@ -12,9 +12,9 @@
 
     <div class="container">
       <div class="trigger">
-        <h6>町村</h6>
+        <h6>町村
         <input id="input" type="text" class="form" value="" placeholder="町名を選択" disabled>
-        <%= link_to "やり直す", new_area_path %>
+        <%= link_to "やり直す", new_area_path %></h6>
       </div>
 
       <!-- Modal -->

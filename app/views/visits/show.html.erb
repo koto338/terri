@@ -1,21 +1,15 @@
 <%= render 'layouts/header' %>
-<%
-=begin%>
- 担当地区のユーザーなら 
-<%
-=end%>
+
 <% if user_signed_in? && @area.user == current_user %>
-
-<div class="title">
-  <div class="sample_image">
-    <img src= <%= user_iamge(@user)%> class="icon_image">
+  <div class="title">
+    <div class="sample_image">
+      <img src= <%= user_iamge(@user)%> class="icon_image">
+    </div>
+    <h2><%= current_user.username %>さんのテリトリ―</h2>
   </div>
-  <h1><%= current_user.username %>のテリトリ―</h1>
-</div>
-
-  <%= link_to visit_new_path do %>
-    <i class="far fa-edit">訪問履歴の登録</i>
-  <% end %>
+  <div class="visit_save">
+    <%= link_to "訪問履歴の登録", visit_new_path %>
+  </div>
 <% end %>
 
 <% if @area.status == 1 %>

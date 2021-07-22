@@ -33,8 +33,9 @@ body {
 
 // タイトル
 h2 {
-    padding-top: 50px;
-    padding-bottom: 30px;;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin-left: 120px;
     font-size: 8px;
 }
 
@@ -42,7 +43,7 @@ h2 {
 .month {
     clear: both;
     padding-bottom: 10px;
-    font-size: 15px;
+    font-size: 17px;
     font-weight: bold;
 }
 
@@ -54,7 +55,7 @@ ul {
 .city {
     border-top: solid 3px #eee;
     list-style: none;
-    font-size: 15px;
+    font-size: 25px;
     height: 80px;
 }
 
@@ -63,7 +64,7 @@ li:last-child {
 }
 
 time {
-    font-size: 10px;
+    font-size: 15px;
     color: gray;
 }
 
@@ -81,7 +82,7 @@ a {
 .fa-car-side {
     float: left;
     clear: both;
-    font-size: 10px;
+    font-size: 15px;
 }
 
 // テリが未登録なら
@@ -106,20 +107,51 @@ a {
 
 // 検索
 .form-control-sm  {
-    margin-left: 350px;
+    margin-top: 50px;
     margin-bottom: 60px;
 }
 
 .btn-warning {
     margin-bottom: 60px;
+    margin-top: 50px;
 }
 
 .search_boder {
-    border-bottom: solid 3px #eee;
     border-top: solid 3px #eee;
     list-style: none;
-    padding: 20px 10px 20px 100px;
-    font-size: 40px;
+    padding: 20px 10px 20px 10px;
+    font-size: 20px;
+    li:last-child {
+        border-bottom: solid 3px #eee;
+    }
+}
+
+// 訪問履歴の登録
+.visit_save {
+    font-size: 25px;
+    text-decoration: none;
+    margin: 0;
+    width: 300px;
+    text-align: left;
+    margin-bottom: 20px;
+}
+.vusit {
+    font-size: 20px;
+}
+
+// テリ登録
+.field {
+    margin-top: 20px;
+    padding-left: 40px;
+}
+
+.status {
+    margin-top: 20px;
+    padding-left: 40px;
+}
+
+.container {
+    margin-top: 20px;
 }
 
 // アイコン
@@ -151,6 +183,11 @@ h5 {
 .icon {
     text-align: center;
     color: #528fff;
+}
+
+// ユーザー一覧
+.card {
+    margin-top: 30px;
 }
 
 // footer
