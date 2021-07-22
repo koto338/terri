@@ -33,7 +33,7 @@ body {
 
 // タイトル
 h2 {
-    padding-top: 30px;
+    padding-top: 50px;
     padding-bottom: 30px;;
     font-size: 8px;
 }
@@ -50,9 +50,10 @@ h2 {
 .main {
     font-size: 20px;
     padding: 0;
-    ul {
-        padding: 0;
-    }
+}
+
+ul {
+    padding: 0;
 }
 
 // 区名町名
@@ -160,7 +161,7 @@ h5 {
 
 // footer
 .nav-item {
-    font-size: 10px;
+    font-size: 8px;
 }
 
 /* アラート */
