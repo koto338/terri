@@ -3,14 +3,14 @@
   <div class="sample_image">
    <img src= <%= user_iamge(@user)%> class="icon_image">
   </div>
-  <h2><%= current_user.username %>さんのテリトリー</h2>
+  <h2 class="name text_center"><%= current_user.username %>さん</h2>
 </div>
 
 <% if @user_areas.blank? %>
 <div class="message">
-  <h3>テリを登録してみよう！</h3>
+  <h3 class="text-center">お疲れ様です。<br>テリを登録してみよう！</h3>
   <div class="icon">
-    <i class="fas fa-angle-double-down fa-5x faa-shake animated" style="color: #ffff33;"></i>
+    <i class="fas fa-angle-double-down fa-3x faa-shake animated" style="color: #BB0000;"></i>
   </div>
 </div>
 

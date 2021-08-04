@@ -15,27 +15,29 @@ body {
 .container-fluid {
     margin-right: 10;
     margin-left: 10;
-    padding-top: 50px;
+    padding-top: 10px;
 }
 
 // 上部ボタン
 .btn-top {
     margin-bottom: 60px;
-    .btn-lg {
-        background: lightgray;
-        color: white;
+    .btn {
+      background-color: #EEEEEE;   
+      color: #666666;
     }
     .now_btn {
         float: right;
+        background-color: #EEEEEE;
+        color: #666666;
 
     }
 }
 
 // タイトル
 h2 {
-    padding-top: 30px;
-    padding-bottom: 30px;
-    margin-left: 120px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    // margin-left: 120px;
     font-size: 8px;
 }
 
@@ -86,13 +88,16 @@ a {
 }
 
 // テリが未登録なら
- .message {
+.message {
     clear: both;
-    text-align: center;
-    margin-top: 800px;
+    // text-align: center;
+    margin-top: 100px;
     h3 {
-        font-size: 30px;
+        font-size: 20px;
     }
+}
+.fa-angle-double-dow {
+    color: #BB0000;
  }
 
   
@@ -157,10 +162,14 @@ a {
 // アイコン
 .icon_image {
     max-width: 100%;
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     border-radius: 100%;
     object-fit: cover;
+}
+.name {
+    padding-left: 70px;
+    margin-top: 25px;
 }
 
 .title {
@@ -184,6 +193,10 @@ h5 {
     text-align: center;
     color: #528fff;
 }
+.nav-link {
+    color: gray
+}
+
 
 // ユーザー一覧
 .card {
@@ -193,7 +206,20 @@ h5 {
 // footer
 .footer_text {
     font-size: 8px;
+    color: black;
 }
+.nav-justified{
+    .fas {
+        color: #444444;
+    }
+    .fa-map-marker-alt {
+        color: #BB0000;
+    }
+}
+
+   
+
+ 
 
 /* アラート */
 .alert {
