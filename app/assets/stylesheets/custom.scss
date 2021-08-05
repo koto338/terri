@@ -20,10 +20,10 @@ body {
 
 // 上部ボタン
 .btn-top {
-    margin-bottom: 60px;
+    margin-bottom: 30px;
     .btn {
       background-color: #EEEEEE;   
-      color: #666666;
+      color: #999999;
     }
     .now_btn {
         float: right;
@@ -37,16 +37,16 @@ body {
 h2 {
     padding-top: 20px;
     padding-bottom: 20px;
-    // margin-left: 120px;
     font-size: 8px;
 }
 
 // 6ヶ月テリ、ワケテリ
 .month {
     clear: both;
-    padding-bottom: 10px;
-    font-size: 17px;
+    // padding-bottom: 7px;
+    font-size: 15px;
     font-weight: bold;
+    // color: #666666;
 }
 
 ul {
@@ -81,10 +81,15 @@ a {
 
 
 // 手放すリンク
-.fa-car-side {
-    float: left;
-    clear: both;
-    font-size: 18px;
+.fa-car-sidek {
+    // float: left;
+    // clear: both;
+    font-size: 15px;
+    margin-left: 3px;
+}
+
+.fa-edit {
+    margin-top: 20px;
 }
 
 // テリが未登録なら
@@ -97,7 +102,7 @@ a {
     }
 }
 .fa-angle-double-dow {
-    color: #BB0000;
+    color:#990000;
  }
 
   
@@ -170,6 +175,7 @@ a {
 .name {
     padding-left: 70px;
     margin-top: 25px;
+    margin-bottom: 50px;
 }
 
 .title {
@@ -194,7 +200,7 @@ h5 {
     color: #528fff;
 }
 .nav-link {
-    color: gray
+    color: gray;
 }
 
 
@@ -210,10 +216,10 @@ h5 {
 }
 .nav-justified{
     .fas {
-        color: #444444;
+        color: #999999;
     }
     .fa-map-marker-alt {
-        color: #BB0000;
+        color: #990000;
     }
 }
 

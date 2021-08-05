@@ -15,7 +15,7 @@
 </div>
 
 <% else %>
-<h4 class="month">6ヶ月</h4>
+<h4 class="month">6ヶ月terri<i class="fas fa-car-side"></i></h4>
   <ul>
     <% @user_areas.each do |area| %>
       <% if area.status == 1 %>
@@ -27,21 +27,23 @@
         <time datetime="<%= area.created_at %>">
           <%= time_ago_in_words(area.created_at) %>
         </time>
-    
+        
+        <%= link_to area_update_path(area.id, metod: :post) do %>
+          <button type="button" class="btn btn-outline-dark btn-sm">離れる</button>
+        <% end %>
+
         <%= link_to visit_path(area) do %>
-          <i class="far fa-edit"></i>
+          <i class="far fa-edit" style="color:#FF0000;"></i>
 　　　 　<% end %>
 
-        <%= link_to area_update_path(area.id, metod: :post) do %>
-          <i class="fas fa-car-side">離れる</i>
-        <% end %>
+        
        
         <% end %>
       <% end %>
   </ul>
 
 
-<h4 class="month">特別</h4>
+<h4 class="month">特別terri<i class="fas fa-car-side"></i></h4>
 
   <ul>
     <% @user_areas.each do |area| %>
@@ -56,11 +58,11 @@
         </time>
     
         <%= link_to visit_path(area) do %>
-          <i class="far fa-edit"></i>
+          <i class="far fa-edit" style="color:#FF0000;"></i>
         <% end %>
 
         <%= link_to area_update_path(area.id, metod: :post) do %>
-          <i class="fas fa-car-side">離れる</i>
+          <button type="button" class="btn btn-outline-dark btn-sm">離れる</button>
         <% end %>
       </li>
       <% end %>

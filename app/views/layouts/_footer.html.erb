@@ -1,11 +1,11 @@
 <% if user_signed_in? %>
 <nav class="navbar-light bg-light fixed-bottom">
   <ul class="nav nav-pills nav-justified">
-    <li class="nav-item border nav-link"><%= link_to root_path do %><i class="fas fa-home fa-2x"></i><div class="footer_text">ホーム</div><% end %></li>
-    <li class="nav-item border nav-link"><%= link_to edit_user_registration_path do %><i class="fas fa-user-cog fa-2x"></i><div class="footer_text">設定</div><% end %></li>
-    <li class="nav-item border nav-link"><%= link_to new_area_path do %><i class="fas fa-map-marker-alt fa-2x"></i><div class="footer_text">テリ登録</div><% end %></li>
-    <li class="nav-item border nav-link"><%= link_to search_path do %><i class="fas fas fa-search fa-2x"></i><div class="footer_text">検索</div><% end %></li>
-    <li class="nav-item border nav-link"><%=link_to user_show_path(@user) do %><i class="fas fa-user-friends fa-2x"></i><div class="footer_text">一覧</div><% end %></li>
+    <li class="nav-item border nav-link"><%= link_to root_path do %><i class="fas fa-home fa-lg"></i><div class="footer_text">ホーム</div><% end %></li>
+    <li class="nav-item border nav-link"><%= link_to edit_user_registration_path do %><i class="fas fa-user-cog fa-lg"></i><div class="footer_text">設定</div><% end %></li>
+    <li class="nav-item border nav-link"><%= link_to new_area_path do %><i class="fas fa-map-marker-alt fa-lg"></i><div class="footer_text">テリ登録</div><% end %></li>
+    <li class="nav-item border nav-link"><%= link_to search_path do %><i class="fas fas fa-search fa-lg"></i><div class="footer_text">検索</div><% end %></li>
+    <li class="nav-item border nav-link"><%=link_to user_show_path(@user) do %><i class="fas fa-user-friends fa-lg"></i><div class="footer_text">一覧</div><% end %></li>
   </ul>
 </nav>
 <% end %>
