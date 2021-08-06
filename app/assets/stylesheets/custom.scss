@@ -8,7 +8,7 @@
 }
 
 body {
-    padding-bottom: 100px;
+    padding-bottom: 16px;
 }
 
 // 余白なし
@@ -23,7 +23,7 @@ body {
     margin-bottom: 30px;
     .btn {
       background-color: #EEEEEE;   
-      color: #999999;
+      color: #666666;
     }
     .now_btn {
         float: right;
@@ -51,6 +51,7 @@ h2 {
 
 ul {
     padding: 0;
+    padding-bottom:2px;
 }
 
 // 区名町名
@@ -58,12 +59,16 @@ ul {
     border-top: solid 3px #eee;
     list-style: none;
     font-size: 25px;
-    height: 80px;
+    height: 90px;
+    // margin-top: 5px;
+    padding-top: 3px;
 }
 
 li:last-child {
     border-bottom: solid 3px #eee;
+    // margin-bottom: 5px;
 }
+
 
 time {
     font-size: 15px;
@@ -71,8 +76,9 @@ time {
 }
 
 // 詳細リンク
-.fa-edit {
+.fa-plus-circle {
     float: right;
+    margin-top: 20px;
 }
 // 下線を消す
 a {
@@ -81,15 +87,17 @@ a {
 
 
 // 手放すリンク
-.fa-car-sidek {
-    // float: left;
-    // clear: both;
-    font-size: 15px;
-    margin-left: 3px;
-}
+// .fa-car-sidek {
+//     margin-left: 3220px;
+//     font-size: 15px;
+//     margin-left: 3px;
+// }
 
-.fa-edit {
-    margin-top: 20px;
+
+.btn-outline-dark {
+    float: left;
+    clear: both;
+    margin-left: 220px;
 }
 
 // テリが未登録なら
@@ -102,7 +110,7 @@ a {
     }
 }
 .fa-angle-double-dow {
-    color:#990000;
+    color:#804000;
  }
 
   
@@ -210,16 +218,19 @@ h5 {
 }
 
 // footer
+.nav-justified {
+    border-top: 1px;
+}
 .footer_text {
     font-size: 8px;
     color: black;
 }
 .nav-justified{
     .fas {
-        color: #999999;
+        color: #c8c8cb;
     }
     .fa-map-marker-alt {
-        color: #990000;
+        color: #804000;
     }
 }
 
