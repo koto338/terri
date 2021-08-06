@@ -8,7 +8,7 @@
 }
 
 body {
-    padding-bottom: 16px;
+    padding-bottom: 50px;
 }
 
 // 余白なし
@@ -97,7 +97,7 @@ a {
 .btn-outline-dark {
     float: left;
     clear: both;
-    margin-left: 220px;
+    margin-left: 180px;
 }
 
 // テリが未登録なら
@@ -219,15 +219,15 @@ h5 {
 
 // footer
 .nav-justified {
-    border-top: 1px;
+    border-top: 5px;
+    border-top: solid #c8c8cb 0.5px;
+
 }
-.footer_text {
-    font-size: 8px;
-    color: black;
-}
+
 .nav-justified{
     .fas {
-        color: #c8c8cb;
+        color: #84919e;
+       
     }
     .fa-map-marker-alt {
         color: #804000;
