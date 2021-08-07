@@ -1,20 +1,20 @@
-<h2 class="mx-auto" style="width: 500px;">区名・町名でさがす</21>
+<h5 class="text-center">探す</h5>
 
-<form class="form-inline ml-auto">
+<form>
   <label class="sr-only" for="kw">キーワード</label>
-  <input type="text" placeholder="キーワード" name="keyword" value="" class="form-control form-control-sm mr-2" id="kw">
-  <button type="submit" class="btn btn-warning btn-sm">検索</button>
+  <input type="text" placeholder="キーワード（ 区名・町名 ）" name="keyword" value="" class="form-control" id="kw">
+  <button type="submit" class="btn btn-warning btn form-control">検索</button>
 </form>
 
  <% if params[:keyword].present? %> 
  <uL>
   <% @areas.each do |area| %>
     <li class="search_boder">
-    <%= link_to visit_path(area.id) do %>
-      <%= area.ward %>
-      <%= area.town %>
-      <%= "#{area.city_block}丁目" %>
-    <% end %>
+      <%= link_to visit_path(area.id) do %>
+        <%= area.ward %>
+        <%= area.town %>
+        <%= "#{area.city_block}丁目" %>
+      <% end %>
     </li>
   <% end %>
 </ul> 

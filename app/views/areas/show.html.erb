@@ -1,4 +1,4 @@
-<%= @user.username %>さん
+<h5 class="sarch_name"><%= @user.username %>さん</h5>
 
 
 <% @areas.each do |area| %>
@@ -14,7 +14,7 @@
       </time> 
 
       <%= link_to visit_path(area) do %>
-        <i class="far fa-edit"></i>  
+        <i class="fa fa-plus-circle fa-lg" style="color: #c8c8cb;"></i>
       <% end %>            
     </li>  
   </ul>    

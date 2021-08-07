@@ -7,12 +7,12 @@
 </div>
 
 <% if @user_areas.blank? %>
-<div class="message">
-  <h3 class="text-center">お疲れ様です。<br>テリを登録してみよう！</h3>
-  <div class="icon">
-    <i class="fas fa-angle-double-down fa-3x faa-shake animated" style="color: #BB0000;"></i>
+  <div class="message">
+    <h3 class="text-center">お疲れ様です。<br>テリを登録してみよう！</h3>
+    <div class="icon">
+      <i class="fas fa-angle-double-down fa-3x faa-shake animated" style="color: #BB0000;"></i>
+    </div>
   </div>
-</div>
 
 <% else %>
 <h4 class="month">6ヶ月terri&nbsp;<i class="fas fa-car-side"></i></h4>
@@ -24,23 +24,23 @@
         <%= area.town %>
         <%= "#{area.city_block}丁目" %>
 
-        <time datetime="<%= area.created_at %>">
-          <%= time_ago_in_words(area.created_at) %>
-        </time>
-    
-        <%= link_to visit_path(area) do %>
-          <i class="fa fa-plus-circle fa-lg" style="color: #77d9a8;"></i>
-        <% end %>
+          <time datetime="<%= area.created_at %>">
+            <%= time_ago_in_words(area.created_at) %>
+          </time>
+      
+          <%= link_to visit_path(area) do %>
+            <i class="fa fa-plus-circle fa-lg" style="color: #77d9a8;"></i>
+          <% end %>
 
-        <%= link_to area_update_path(area.id, metod: :post) do %>
-          <button type="button" class="btn btn-outline-dark btn-sm">離れる</button>
-        <% end %>
+          <%= link_to area_update_path(area.id, metod: :post), method: :delete, data: { confirm: 'テリを手離します。よろしいですか？' } do %>
+            <i class="far fa-trash-alt fa-xs"></i>
+          <% end %>
       </li>
       <% end %>
     <% end %>
   </ul>
 
-
+  
 <h4 class="month">特別terri&nbsp;<i class="fas fa-car-side"></i></h4>
 
   <ul>
@@ -51,19 +51,26 @@
         <%= area.town %>
         <%= "#{area.city_block}丁目" %>
 
-        <time datetime="<%= area.created_at %>">
-          <%= time_ago_in_words(area.created_at) %>
-        </time>
-    
-        <%= link_to visit_path(area) do %>
-          <i class="fa fa-plus-circle fa-lg" style="color: #ffff80;"></i>
-        <% end %>
+          <time datetime="<%= area.created_at %>">
+            <%= time_ago_in_words(area.created_at) %>
+          </time>
+      
+          <%= link_to visit_path(area) do %>
+            <i class="fa fa-plus-circle fa-lg" style="color: #d8f255;"></i>
+          <% end %>
 
-        <%= link_to area_update_path(area.id, metod: :post) do %>
-          <button type="button" class="btn btn-outline-dark btn-sm">離れる</button>
-        <% end %>
-      </li>
+          <%= link_to area_update_path(area.id, metod: :post), data: { confirm: 'テリを手離します。よろしいですか？' } do %>
+            <i class="far fa-trash-alt fa-xs" ></i>
+          <% end %>
+         </li>
       <% end %>
     <% end %>
   </ul>
 <% end %>
+ 
+
+ 
+  
+
+
+

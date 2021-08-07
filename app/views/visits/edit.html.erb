@@ -1,33 +1,31 @@
-<h5>訪問履歴の編集</h5>
-<div class="send">
+<h5 class="text-center">訪問履歴の編集</h5>
    <%= form_for @visit, url: visit_path do |f| %>
-    <div class="field">
+    <div class="form-group">
       <%= f.label :customer, "顧客名" %>
-      <%= f.text_field :customer, placeholder: "○○邸" ,class: 'text' %>
+      <%= f.text_field :customer, placeholder: "○○邸", class: 'form-control' %>
     </div>
 
-    <div class="field">
+    <div class="form-group">
       <%= f.label :appointment, "アポイント" %>
-      <%= f.text_field :appointment, placeholder: "3/1 Aアポ" ,class: 'text' %>
+      <%= f.text_field :appointment, placeholder: "3/1: Aアポ", class: 'form-control' %>
     </div>
 
-    <div class="field">
+    <div class="form-group">
       <%= f.label :visit, "訪問日" %>
-      <%= f.text_field :visit, placeholder: "4/1 9時訪問" ,class: 'text' %>
+      <%= f.text_field :visit, placeholder: "4/1: 9時訪問", class: 'form-control' %>
     </div>
 
-    <div class="field">
+    <div class="form-group">
       <%= f.label :contract, "成約" %>
-      <%= f.text_field :contract, placeholder: "4/5 成約" ,class: 'text' %>
+      <%= f.text_field :contract, placeholder: "4/5: 成約", class: 'form-control' %>
     </div>
 
-    <div class="field">
+    <div class="form-group">
       <%= f.label :contract, "memo" %>
-      <%= f.text_field :note, placeholder: "メモを入力" ,class: 'text' %>
+      <%= f.text_field :note, placeholder: "メモを入力", class: 'form-control'%>
     </div>
 
-    <div class="field wrap">
-      <input type="submit" class="btn btn-primary" value="更新する" >
+    <div class="form-group">
+      <input type="submit" class="btn btn-primary  btn-block" value="更新する" >
     </div>
   <% end %>
-</div> 

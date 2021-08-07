@@ -1,8 +1,6 @@
 <%= render 'layouts/header' %>
-<h1><%= current_user.username %>さんの過去のテリトリ―</h1>
+<h5 class="text-center">履歴一覧</h5>
 
-<div class="main">
-  <h4 class="month">履歴一覧</div>
 <div class="main">
   <ul>
     <% @user_areas.each do |area| %>
@@ -17,7 +15,7 @@
         </time>
     
         <%= link_to visit_path(area) do %>
-          <i class="far fa-edit"></i>
-　　　 　<% end %>
+          <i class="fa fa-plus-circle fa-lg" style="color: #c8c8cb;"></i>
+        <% end %>
       <% end %>
     <% end %>

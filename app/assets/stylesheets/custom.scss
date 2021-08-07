@@ -43,10 +43,8 @@ h2 {
 // 6ヶ月テリ、ワケテリ
 .month {
     clear: both;
-    // padding-bottom: 7px;
     font-size: 15px;
     font-weight: bold;
-    // color: #666666;
 }
 
 ul {
@@ -60,7 +58,6 @@ ul {
     list-style: none;
     font-size: 25px;
     height: 90px;
-    // margin-top: 5px;
     padding-top: 3px;
 }
 
@@ -79,25 +76,16 @@ time {
 .fa-plus-circle {
     float: right;
     margin-top: 20px;
+    clear: both;
 }
 // 下線を消す
 a {
     text-decoration:none !important;
 }  
 
-
-// 手放すリンク
-// .fa-car-sidek {
-//     margin-left: 3220px;
-//     font-size: 15px;
-//     margin-left: 3px;
-// }
-
-
-.btn-outline-dark {
-    float: left;
-    clear: both;
-    margin-left: 180px;
+.fa-trash-alt {
+    color: black;
+    
 }
 
 // テリが未登録なら
@@ -144,24 +132,41 @@ a {
     }
 }
 
-// 訪問履歴の登録
-.visit_save {
-    font-size: 25px;
-    text-decoration: none;
-    margin: 0;
-    width: 300px;
-    text-align: left;
-    margin-bottom: 20px;
-}
-.vusit {
-    font-size: 20px;
+.sarch_name {
+    font-weight: bold;
 }
 
-// テリ登録
-.field {
+
+// 訪問履歴の登録
+.visit_btn {
     margin-top: 20px;
-    padding-left: 15px;
+    margin-bottom: 10px;
 }
+
+.area_title {
+    font-size: 25px;
+    font-weight: bold; 
+    margin-bottom: 20px;
+}
+.visit_list {
+    font-size: 20px;
+    list-style: none;
+}
+// 編集ボタン
+.btn-outline-primary {
+    float: right;
+    clear: both;
+    margin-top: 20px;
+}
+// .vusit {
+    // font-size: 20px;
+// }
+
+// テリ登録
+// .field {
+//     margin-top: 20px;
+    // padding-left: 15px;
+// }
 
 .status {
     margin-top: 20px;
@@ -169,6 +174,10 @@ a {
 }
 
 .container {
+    margin-top: 20px;
+}
+
+.modal-town {
     margin-top: 20px;
 }
 
@@ -199,8 +208,9 @@ a {
 
 
 h5 {
-    text-align: center;
-    font-size: 40px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 30px;
 }
 
 .icon {

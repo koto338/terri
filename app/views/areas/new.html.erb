@@ -1,19 +1,18 @@
-<h2 class="mx-auto" style="width: 500px;">テリ登録</h2>
-<div class="send">
+<h5 class="text-center">テリ登録</h5>
+
   <%= form_for @area, url: areas_path do |f| %>
-    <div class="field area">
+    <div class="field area form-group">
       <%= f.label :ward, "区市" %>
       <%= f.select :ward, ['千代田区', '中央区', '港区','新宿区','文京区','台東区', '墨田区', '江東区', '品川区', '目黒区' , '大田区',
       ' 世田谷区', ' 渋谷区', '中野区', '杉並区', '豊島区', '北区', '荒川区', '板橋区', '練馬区', '足立区', '葛飾区', '江戸川区', '八王子市',
       ' 立川市', '武蔵野市', '三鷹市', '青梅市', '府中市','昭島市','調布市','町田市', '小金井市', '小平市', '日野市', '東村山市', '国分寺市', 
       '国立市', '福生市', '狛江市','東大和市','清瀬市','東久留米市','武蔵村山市','多摩市','稲城市','羽村市', 'あきる野市', '西東京市'],
-      { include_blank: '区市・区名を選択' }, { class: 'select'} %>
+      { include_blank: '区市・区名を選択' }, { class: 'select form-control'} %>
     </div>
 
-    <div class="container">
       <div class="trigger">
-        <h6>町村
-        <input id="input" type="text" class="form" value="" placeholder="町名を選択" disabled>
+        <h6 class="form-group">町村
+        <input id="input" type="text" class="form form-control" value="" placeholder="町名を選択" disabled>
         <%= link_to "やり直す", new_area_path %></h6>
       </div>
 
@@ -31,7 +30,7 @@
               <div id="db"> 
                 <%= f.select :town, Area.all.map(&:town), include_blank: "町名を選択" %>
               </div>
-              <input type="text" id="town" name="area[town]" placeholder="なければここに入力">
+              <input type="text" id="town" name="area[town]" class="modal-town" placeholder="なければここに入力">
             </div>
             <div class="modal-footer">
               <button type="button" id="push" class="btn btn-primary" data-dismiss="modal">決定</button>
@@ -39,27 +38,26 @@
           </div>
         </div>
       </div>
-    </div>
 
-
-    <div class="field city_block">
+    <div class="field city_block form-group">
       <%= f.label :city_block, "番地" %>
-      <%= f.select :city_block, (1..9).to_a, { include_blank: '選択' }, { class: 'select'} %>
+      <%= f.select :city_block, (1..9).to_a, { include_blank: '選択' }, { class: 'select form-control'} %>
       <span>丁目</span>
     </div>
 
-    <div class="status"> 
+    <div class="status form-group"> 
       <%= f.label :status_1, "6ヶ月テリ" %>
-      <%= f.radio_button :status, "1" %>
-      
-      <%= f.label :status_2, "訳テリ" %>
-      <%= f.radio_button :status, "2" %>
+      <%= f.radio_button :status, "1"%>
+    </div> 
+    <div class="status form-group"> 
+      <%= f.label :status_2, "特別テリ" %>
+      <%= f.radio_button :status, "2"%>
     </div>
 
     <%= hidden_field_tag :user_id, current_user.id %>
     
-    <div class="field wrap">
-      <input type="submit" class="btn btn-primary" value="登録する", data-confirm="テリに登録しますか？"  >
+    <div class="field wrap form-group">
+      <input type="submit" class="btn btn-primary btn-block" value="登録する">
     </div>
   <% end %>
 </div> 
