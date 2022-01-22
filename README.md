@@ -1,24 +1,10 @@
-# README
+# terri
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+営業テリトリー管理アプリ    
 
-Things you may want to cover:
+要件定義、テーブル設計:   
+https://docs.google.com/spreadsheets/d/1bO_gn3v20Ts_OEogKVU_7HiVQMSk5HxyasPv-NrDv2g/edit?usp=sharing
 
-* Ruby version
+FW:  
+https://docs.google.com/presentation/d/1DRJU_Ca1h8fxrAsIboT2y5N0FQCOdtZcFLbPLuhdkfM/edit?usp=sharing
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
