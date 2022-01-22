@@ -27,7 +27,7 @@ https://docs.google.com/presentation/d/1DRJU_Ca1h8fxrAsIboT2y5N0FQCOdtZcFLbPLuhd
 - 削除  
 
   |![削除](https://user-images.githubusercontent.com/74661026/150643546-9f283a8a-59ee-45d2-b623-dfa1ae219b0a.jpg)|
-| ----- |
+  | ----- |
 
 - アカウント編集  
 
