@@ -31,9 +31,12 @@ class AreasController < ApplicationController
       @areas = []
       # 分割したキーワードごとに検索
       @keyword.split(/[[:blank:]]+/).each do |keyword|
-       #blankと被っているかも？あとで修正 
-       next if keyword == ""
+        # 入力された文字列を空白で分解 .split(/[[:blank:]]/)  => ['渋谷区', '', '桜丘町']
+        # 連続した空白も除去           .split(/[[:blank:]]+/) => ['渋谷区', '桜丘町']
         @areas += Area.where('ward LIKE? OR town LIKE?', "%#{keyword}%", "%#{keyword}%")
+          # 部分一致検索 "%#{keyword}%"　
+          # % はゼロ文字以上の文字列がある状態
+          # 前方一致検索は"#{keyword}%" 、後方一致検索は"%#{keyword}" と書ける
       end
     end
   end
