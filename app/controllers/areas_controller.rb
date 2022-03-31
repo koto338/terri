@@ -31,7 +31,8 @@ class AreasController < ApplicationController
       @areas = []
       # 分割したキーワードごとに検索
       @keyword.split(/[[:blank:]]+/).each do |keyword|
-        next if keyword == ""
+       #blankと被っているかも？あとで修正 
+       next if keyword == ""
         @areas += Area.where('ward LIKE? OR town LIKE?', "%#{keyword}%", "%#{keyword}%")
       end
     end
